@@ -140,6 +140,7 @@
   color: var(--gray-medium);
   margin-bottom: 1.5rem;
   line-height: 1.8;
+  flex-grow: 1;
 }
 
 .article-meta {
@@ -149,6 +150,7 @@
   font-size: 0.9rem;
   color: var(--gray-medium);
   margin-bottom: 1.5rem;
+  margin-top: auto;
 }
 
 .article-meta span {
@@ -176,6 +178,9 @@
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-slow);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .article-image {
@@ -191,6 +196,9 @@
 
 .article-card-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .article-card-content h3 {

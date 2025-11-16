@@ -1,8 +1,9 @@
 footer {
-  background: var(--gray-darker);
-  color: var(--gray-light);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 4rem 2rem 2rem;
   margin-top: 4rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-grid {
@@ -13,7 +14,7 @@ footer {
 }
 
 .footer-column h3 {
-  color: white;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
   font-weight: 600;
@@ -21,7 +22,7 @@ footer {
 
 .footer-column p {
   line-height: 1.8;
-  color: var(--gray-light);
+  color: var(--text-secondary);
   margin-bottom: 1rem;
 }
 
@@ -36,7 +37,7 @@ footer {
 }
 
 .footer-column a {
-  color: var(--gray-light);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color var(--transition-base);
   display: inline-block;
@@ -58,13 +59,14 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--bg-tertiary);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-base);
   font-size: 1.2rem;
   transform: none;
+  color: var(--text-primary);
 }
 
 .social-links a:hover {
@@ -76,7 +78,7 @@ footer {
 /* Footer Bottom */
 .footer-bottom {
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,11 +88,11 @@ footer {
 
 .footer-bottom p {
   margin: 0;
-  color: var(--gray-light);
+  color: var(--text-secondary);
 }
 
 .footer-bottom a {
-  color: var(--gray-light);
+  color: var(--text-secondary);
   text-decoration: none;
   transition: color var(--transition-base);
 }
@@ -100,8 +102,30 @@ footer {
 }
 
 /* Footer Logo */
-.footer-column img {
+.footer-logo {
   margin-bottom: 1rem;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-logo-main {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: -0.2rem;
+}
+
+.footer-logo-sub {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  line-height: 1;
 }
 
 /* Responsive */

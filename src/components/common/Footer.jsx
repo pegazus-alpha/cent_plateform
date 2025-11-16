@@ -8,11 +8,10 @@ const Footer = () => {
     <footer>
       <div className="footer-grid container">
         <div className="footer-column">
-          <img
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Ctext x='10' y='60' font-family='Poppins, sans-serif' font-size='40' font-weight='bold' fill='white'%3E100%25%3C/text%3E%3Ctext x='10' y='85' font-family='Poppins, sans-serif' font-size='16' fill='%23cbd5e0'%3EACADEMY%3C/text%3E%3C/svg%3E"
-            alt="100% ACADEMY"
-            style={{ height: '50px', marginBottom: '1rem' }}
-          />
+          <div className="footer-logo">
+            <div className="footer-logo-main">100%</div>
+            <div className="footer-logo-sub">ACADEMY</div>
+          </div>
           <p style={{ marginBottom: '1rem' }}>
             Apprends, progresse et réussis avec la communauté 100% ACADEMY
           </p>

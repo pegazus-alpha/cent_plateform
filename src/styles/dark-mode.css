@@ -220,8 +220,12 @@ footer {
   border-top: 1px solid var(--border-color);
 }
 
-footer h4 {
+footer h3 {
   color: var(--text-primary) !important;
+}
+
+footer p {
+  color: var(--text-secondary) !important;
 }
 
 footer a {
@@ -231,6 +235,24 @@ footer a {
 
 footer a:hover {
   color: var(--secondary-pink) !important;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.social-links a {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Footer Logo - s'assurer qu'il est visible en mode sombre */
+.footer-logo-main {
+  color: var(--text-primary) !important;
+}
+
+.footer-logo-sub {
+  color: var(--text-secondary) !important;
 }
 
 /* Navigation */

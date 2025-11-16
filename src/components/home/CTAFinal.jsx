@@ -9,7 +9,7 @@ export const CTAFinal = () => {
         <h2>Prêt à transformer ton parcours académique ?</h2>
         <p>Rejoins 100% ACADEMY aujourd'hui et accède à tous nos services</p>
         <Link to="/register">
-          <Button variant="primary" size="large">
+          <Button variant="secondary" size="large">
             S'inscrire maintenant →
           </Button>
         </Link>
