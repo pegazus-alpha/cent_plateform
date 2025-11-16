@@ -17,24 +17,56 @@
   box-shadow: 0 8px 24px var(--shadow-color) !important;
 }
 
-/* Titres */
-h1, h2, h3, h4, h5, h6 {
+/* Titres - seulement dans les contenus, pas les boutons */
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6,
+.article-card h1, .article-card h2, .article-card h3,
+.featured-article h1, .featured-article h2, .featured-article h3,
+.service-card h1, .service-card h2, .service-card h3,
+.section-title {
   color: var(--text-primary) !important;
 }
 
-/* Paragraphes et textes */
-p, span, div {
-  color: var(--text-primary);
+/* Textes - plus sélectif pour éviter les conflits */
+.article-content p,
+.article-excerpt,
+.service-description,
+.testimonial-text {
+  color: var(--text-primary) !important;
 }
 
 .text-secondary {
   color: var(--text-secondary) !important;
 }
 
-/* Boutons */
+/* Boutons - préserver les couleurs des CTA */
+.btn-primary,
+.cta-primary {
+  background: var(--primary-green) !important;
+  color: white !important;
+  border-color: var(--primary-green) !important;
+}
+
+.btn-secondary,
+.cta-secondary {
+  background: var(--secondary-pink) !important;
+  color: white !important;
+  border-color: var(--secondary-pink) !important;
+}
+
+.btn-primary:hover,
+.cta-primary:hover {
+  background: var(--primary-green-hover) !important;
+}
+
+.btn-secondary:hover,
+.cta-secondary:hover {
+  background: var(--secondary-pink-hover) !important;
+}
+
+/* Autres boutons génériques */
 .btn,
 .button,
-button:not(.theme-toggle):not(.mobile-menu-btn) {
+button:not(.theme-toggle):not(.mobile-menu-btn):not(.btn-primary):not(.btn-secondary):not(.cta-primary):not(.cta-secondary) {
   background: var(--button-bg);
   color: var(--text-primary);
   border: 1px solid var(--border-color);
@@ -43,7 +75,7 @@ button:not(.theme-toggle):not(.mobile-menu-btn) {
 
 .btn:hover,
 .button:hover,
-button:hover:not(.theme-toggle):not(.mobile-menu-btn) {
+button:hover:not(.theme-toggle):not(.mobile-menu-btn):not(.btn-primary):not(.btn-secondary):not(.cta-primary):not(.cta-secondary) {
   background: var(--bg-tertiary);
   border-color: var(--primary-green);
 }
@@ -102,11 +134,123 @@ textarea::placeholder {
   color: white !important;
 }
 
+/* Hero section - garder les couleurs originales */
+.hero {
+  color: white !important;
+}
+
+.hero h1,
+.hero h2,
+.hero p {
+  color: white !important;
+}
+
+/* Sections avec background spécial */
+.about {
+  background: var(--bg-secondary) !important;
+}
+
+/* Cartes de la section "qui sommes nous" */
+.pillar-card {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 4px 16px var(--shadow-color) !important;
+}
+
+.pillar-card h3 {
+  color: var(--text-primary) !important;
+}
+
+.pillar-card p {
+  color: var(--text-secondary) !important;
+}
+
+.services {
+  background: var(--bg-primary) !important;
+}
+
+.testimonials {
+  background: var(--bg-secondary) !important;
+}
+
+.community {
+  background: var(--bg-primary) !important;
+}
+
+/* Service cards - conserver l'effet pink */
+.service-card .service-icon {
+  background: var(--secondary-pink) !important;
+  color: white !important;
+}
+
+/* Icônes des piliers */
+.pillar-icon {
+  color: var(--primary-green) !important;
+}
+
+.pillar-card:nth-child(even) .pillar-icon {
+  color: var(--secondary-pink) !important;
+}
+
+/* Testimonials */
+.testimonial-card {
+  background: var(--card-bg) !important;
+  border-left: 4px solid var(--secondary-pink) !important;
+}
+
+/* Stats et compteurs */
+.stat-card {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 4px 16px var(--shadow-color) !important;
+}
+
+.stat-number {
+  color: var(--primary-green) !important;
+}
+
+.stat-label {
+  color: var(--text-secondary) !important;
+}
+
 /* Footer */
 footer {
   background: var(--bg-secondary) !important;
   color: var(--text-primary) !important;
   border-top: 1px solid var(--border-color);
+}
+
+footer h4 {
+  color: var(--text-primary) !important;
+}
+
+footer a {
+  color: var(--text-secondary) !important;
+  transition: color var(--transition-base);
+}
+
+footer a:hover {
+  color: var(--secondary-pink) !important;
+}
+
+/* Navigation */
+nav a {
+  color: var(--text-primary) !important;
+}
+
+nav a:hover {
+  color: var(--secondary-pink) !important;
+}
+
+/* Form elements */
+input, textarea, select {
+  background: var(--input-bg) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-tertiary) !important;
 }
 
 /* Overlay */

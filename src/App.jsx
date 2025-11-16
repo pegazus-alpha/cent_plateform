@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './context/LanguageContext';
-import { ThemeProvider } from './hooks/useTheme';
+import { ThemeProvider } from './hooks/useTheme.jsx';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import OfflineBanner from './components/common/OfflineBanner';

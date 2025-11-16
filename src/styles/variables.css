@@ -80,9 +80,13 @@
   --input-bg: #2d3748;
   --button-bg: #4a5568;
   
-  /* Ajuster les couleurs primaires pour le contraste */
+  /* Garder les couleurs primaires visibles en mode sombre */
   --primary-green: #4fd1c7;
   --primary-green-hover: #68d391;
+  --secondary-pink: #f093fb;
+  --secondary-pink-hover: #f8b6fd;
+  
+  /* Ajuster les autres couleurs */
   --gray-light: #4a5568;
   --gray-medium: #a0aec0;
   --off-white: #2d3748;
