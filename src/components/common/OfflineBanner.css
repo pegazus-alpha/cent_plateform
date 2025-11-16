@@ -1,0 +1,114 @@
+.offline-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.offline-banner.show {
+  transform: translateY(0);
+}
+
+.offline-banner .banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.offline-banner .banner-icon {
+  font-size: 1.1rem;
+  animation: pulse 2s infinite;
+}
+
+.offline-banner .banner-text {
+  flex: 1;
+  text-align: center;
+}
+
+.offline-banner .banner-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 1rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.offline-banner .banner-close:hover {
+  opacity: 1;
+}
+
+.offline-banner .banner-close:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Online banner variant */
+.offline-banner.online {
+  background: linear-gradient(135deg, #00b894, #00cec9);
+}
+
+/* Animation for the icon */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .offline-banner {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .offline-banner .banner-content {
+    gap: 0.25rem;
+  }
+  
+  .offline-banner .banner-text {
+    font-size: 0.85rem;
+  }
+  
+  .offline-banner .banner-close {
+    margin-left: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .offline-banner {
+    padding: 0.5rem;
+  }
+  
+  .offline-banner .banner-content {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .offline-banner .banner-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    margin: 0;
+  }
+}
