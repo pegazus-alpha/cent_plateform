@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 import './Header.css';
 
 const Header = () => {
@@ -101,6 +102,7 @@ const Header = () => {
           </ul>
 
           <div className="header-actions">
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
         </nav>

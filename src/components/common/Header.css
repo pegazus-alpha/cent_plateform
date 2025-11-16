@@ -1,15 +1,16 @@
 header {
-  background: white;
+  background: var(--header-bg);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
   transition: all var(--transition-slow);
   width: 100%;
+  border-bottom: 1px solid var(--border-color);
 }
 
 header.scrolled {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 4px 16px var(--shadow-color);
 }
 
 nav {
@@ -61,7 +62,7 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--gray-dark);
+  color: var(--text-primary);
   font-weight: 500;
   transition: color var(--transition-base);
   position: relative;
@@ -103,14 +104,14 @@ nav {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--gray-dark);
+  color: var(--text-primary);
   padding: 0.5rem;
   border-radius: var(--radius-sm);
   transition: all var(--transition-base);
 }
 
 .mobile-menu-btn:hover {
-  background: var(--gray-light);
+  background: var(--bg-tertiary);
   color: var(--primary-green);
 }
 
@@ -186,20 +187,22 @@ nav {
     top: 100%;
     left: 0;
     right: 0;
-    background: white;
+    background: var(--card-bg);
     padding: 1rem 0;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 24px var(--shadow-color);
     gap: 0;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
     border-radius: 0 0 var(--radius-md) var(--radius-md);
     z-index: 1000;
+    border: 1px solid var(--border-color);
+    border-top: none;
   }
 
   .nav-links.mobile-open li {
     width: 100%;
-    border-bottom: 1px solid var(--gray-light);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .nav-links.mobile-open li:last-child {
@@ -213,7 +216,7 @@ nav {
   }
 
   .nav-links.mobile-open a:hover {
-    background: var(--gray-light);
+    background: var(--bg-tertiary);
     padding-left: 2rem;
   }
 }
