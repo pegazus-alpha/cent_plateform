@@ -1,0 +1,109 @@
+/* PWA Notification Styles */
+.pwa-notification {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: var(--gray-dark);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: var(--z-modal);
+  min-width: 300px;
+  max-width: 90vw;
+  border-left: 4px solid var(--primary-green);
+  animation: slideUp 0.3s ease-out;
+}
+
+.pwa-notification.offline {
+  border-left-color: #f59e0b;
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.pwa-notification.update {
+  border-left-color: #3b82f6;
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.pwa-notification.install {
+  border-left-color: var(--primary-green);
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.pwa-notification span {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pwa-notification p {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  flex: 1;
+}
+
+.pwa-btn {
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.pwa-btn:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-1px);
+}
+
+.pwa-notification.offline .pwa-btn {
+  background: #f59e0b;
+}
+
+.pwa-notification.update .pwa-btn {
+  background: #3b82f6;
+}
+
+.pwa-notification.install .pwa-btn {
+  background: var(--primary-green);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .pwa-notification {
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    transform: none;
+    min-width: auto;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .pwa-notification p {
+    margin: 0.5rem 0;
+  }
+}

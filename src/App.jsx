@@ -5,6 +5,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import OfflineBanner from './components/common/OfflineBanner';
+import PWAPrompt from './components/common/PWAPrompt';
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
 import ArticlePage from './pages/ArticlePage';
@@ -20,6 +21,7 @@ function App() {
           <div className="App">
             <Header />
             <OfflineBanner />
+            <PWAPrompt />
             <main>
               <Routes>
                 <Route path="/" element={<HomePage />} />
