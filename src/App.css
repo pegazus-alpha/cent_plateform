@@ -5,6 +5,24 @@
   text-align: center;
 }
 
+/* Mobile: occuper tout l'espace sans marges */
+@media (max-width: 768px) {
+  #root {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100vw;
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0;
+  }
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

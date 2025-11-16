@@ -5,6 +5,22 @@
   padding: 6rem 2rem;
   position: relative;
   overflow: hidden;
+  width: 100%;
+}
+
+/* Mobile: hero sans marges et padding réduit */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1rem;
+    margin: 0;
+    width: 100vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0.5rem;
+  }
 }
 
 .hero::before {

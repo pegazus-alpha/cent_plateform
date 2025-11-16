@@ -91,3 +91,68 @@ img {
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
 }
+
+/* Mobile optimizations - zero margins */
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 var(--spacing-sm);
+  }
+  
+  #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  /* Classes utilitaires pour mobile full-width */
+  .mobile-full-width {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  .mobile-no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .mobile-minimal-padding {
+    padding-left: var(--spacing-xs) !important;
+    padding-right: var(--spacing-xs) !important;
+  }
+  
+  /* Réduire les espacements internes sur mobile */
+  :root {
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.25rem;
+    --spacing-xl: 1.5rem;
+    --spacing-2xl: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+  
+  /* Espacements encore plus réduits sur très petits écrans */
+  :root {
+    --spacing-xs: 0.125rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.25rem;
+    --spacing-2xl: 1.5rem;
+  }
+}

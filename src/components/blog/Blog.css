@@ -3,6 +3,30 @@
   background: linear-gradient(135deg, rgba(255, 79, 139, 0.1) 0%, rgba(3, 125, 123, 0.1) 100%);
   padding: 4rem 2rem;
   text-align: center;
+  width: 100%;
+}
+
+/* Mobile: blog header sans marges */
+@media (max-width: 768px) {
+  .blog-header {
+    padding: 2rem 1rem;
+    margin: 0;
+    width: 100vw;
+  }
+  
+  .blog-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-header {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .blog-header h1 {
+    font-size: 1.75rem;
+  }
 }
 
 .blog-header h1 {
