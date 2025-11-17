@@ -54,34 +54,22 @@ const ArticlePage = () => {
 
   if (articleLoading) {
     return (
-      <div className="loading-container" style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem 2rem' }}>
+      <div className="loading-container">
         <div className="spinner"></div>
-        <p style={{ marginTop: '1rem', color: 'var(--gray-medium)' }}>Chargement de l'article...</p>
+        <p>Chargement de l'article...</p>
       </div>
     );
   }
 
   if (articleError || !article) {
     return (
-      <div className="error-container" style={{ minHeight: '60vh', textAlign: 'center', padding: '4rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>😕</div>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--gray-dark)' }}>Article non trouvé</h2>
-        <p style={{ color: 'var(--gray-medium)', marginBottom: '2rem', fontSize: '1.1rem' }}>
+      <div className="error-container">
+        <div className="error-icon">😕</div>
+        <h2>Article non trouvé</h2>
+        <p>
           Désolé, cet article n'existe pas ou a été supprimé.
         </p>
-        <a 
-          href="/blog" 
-          style={{ 
-            color: 'white',
-            background: 'var(--primary-green)',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            fontWeight: '600',
-            textDecoration: 'none',
-            display: 'inline-block',
-            transition: 'all 0.3s ease'
-          }}
-        >
+        <a href="/blog" className="btn-back-to-blog">
           ← Retour au blog
         </a>
       </div>

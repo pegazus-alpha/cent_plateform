@@ -1,17 +1,19 @@
+import { MdRocketLaunch, MdVisibility, MdStars } from 'react-icons/md';
+
 export const About = () => {
   const pillars = [
     {
-      icon: '🚀',
+      icon: <MdRocketLaunch />,
       title: 'Notre Mission',
       description: 'Démocratiser l\'accès à une éducation de qualité en offrant des cours de soutien, formations et ressources pédagogiques adaptées à chaque apprenant.',
     },
     {
-      icon: '🔭',
+      icon: <MdVisibility />,
       title: 'Notre Vision',
       description: 'Devenir la référence régionale de l\'éducation augmentée par l\'IA, créant un écosystème où chaque étudiant peut atteindre son plein potentiel.',
     },
     {
-      icon: '⭐',
+      icon: <MdStars />,
       title: 'Nos Valeurs',
       description: 'Excellence académique, proximité, innovation technologique et construction d\'une communauté solidaire et motivante.',
     },
@@ -26,7 +28,8 @@ export const About = () => {
         </p>
         <div className="pillars">
           {pillars.map((pillar, index) => (
-            <div key={index} className="pillar-card animate-on-scroll">
+            <div key={index} className="pillar-card animate-on-scroll" data-card={index}>
+              <div className="card-glow"></div>
               <div className="pillar-icon">{pillar.icon}</div>
               <h3>{pillar.title}</h3>
               <p>{pillar.description}</p>

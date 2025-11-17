@@ -8,41 +8,182 @@
   width: 100%;
 }
 
-/* Mobile: hero sans marges et padding réduit */
-@media (max-width: 768px) {
-  .hero {
-    padding: 3rem 1rem;
-    margin: 0;
-    width: 100vw;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 2rem 0.5rem;
-  }
-}
-
+/* Animation de fond futuriste */
 .hero::before {
   content: '';
   position: absolute;
-  width: 400px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  top: -100px;
-  right: -100px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 79, 139, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(3, 125, 123, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: backgroundPulse 8s ease-in-out infinite;
+  z-index: 1;
 }
 
 .hero::after {
   content: '';
   position: absolute;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 79, 139, 0.1);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 40%, rgba(255, 79, 139, 0.1) 50%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(3, 125, 123, 0.1) 50%, transparent 60%);
+  background-size: 200% 200%;
+  animation: backgroundWave 12s linear infinite;
+  z-index: 2;
+}
+
+/* Particules flottantes */
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero-particles::before,
+.hero-particles::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  bottom: -50px;
-  left: -50px;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    20px 30px 0 rgba(255, 79, 139, 0.4),
+    40px 60px 0 rgba(3, 125, 123, 0.4),
+    -20px 80px 0 rgba(255, 255, 255, 0.3),
+    60px 20px 0 rgba(255, 79, 139, 0.3),
+    -40px 40px 0 rgba(3, 125, 123, 0.3),
+    80px 100px 0 rgba(255, 255, 255, 0.2),
+    -60px 120px 0 rgba(255, 79, 139, 0.2),
+    100px 40px 0 rgba(3, 125, 123, 0.2),
+    -80px 60px 0 rgba(255, 255, 255, 0.2);
+  animation: particles 20s linear infinite;
+}
+
+.hero-particles::after {
+  animation-delay: -10s;
+  animation-duration: 25s;
+}
+
+/* Lignes de données futuristes */
+.hero-data-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.05) 2%, transparent 4%),
+    linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.03) 1%, transparent 2%);
+  background-size: 50px 50px;
+  animation: dataFlow 15s linear infinite;
+}
+
+@keyframes backgroundPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes backgroundWave {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 100%;
+  }
+  50% {
+    background-position: 200% 0%;
+  }
+  75% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes particles {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes dataFlow {
+  0% {
+    transform: translateX(-50px) translateY(-50px);
+  }
+  100% {
+    transform: translateX(50px) translateY(50px);
+  }
+}
+
+/* Animations pour les cartes "Qui sommes nous" */
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Animation de brillance sur hover */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(400%) skewX(-15deg);
+  }
 }
 
 .hero-content {
@@ -53,7 +194,7 @@
   gap: 4rem;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .hero h1 {
@@ -111,32 +252,212 @@
 }
 
 .pillar-card {
-  background: white;
-  padding: 2rem;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-slow);
-  border-left: 4px solid var(--primary-green);
+  background: white !important;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
 }
 
-.pillar-card:nth-child(even) {
-  border-left-color: var(--secondary-pink);
+/* Teintes plus intenses de vert et rose sur fond blanc */
+.pillar-card:nth-child(1) {
+  background: linear-gradient(135deg, 
+    rgba(3, 125, 123, 0.25) 0%, 
+    white 100%) !important;
+  border-left: 4px solid var(--primary-green);
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+.pillar-card:nth-child(2) {
+  background: linear-gradient(135deg, 
+    rgba(255, 79, 139, 0.25) 0%, 
+    white 100%) !important;
+  border-left: 4px solid var(--secondary-pink);
+  animation: cardFloat 6s ease-in-out infinite 2s;
+}
+
+.pillar-card:nth-child(3) {
+  background: linear-gradient(135deg, 
+    rgba(3, 125, 123, 0.25) 0%, 
+    white 100%) !important;
+  border-left: 4px solid var(--primary-green);
+  animation: cardFloat 6s ease-in-out infinite 4s;
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s;
+}
+
+.pillar-card:hover::before {
+  left: 100%;
 }
 
 .pillar-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover avec teintes plus intenses */
+.pillar-card:nth-child(1):hover {
+  background: linear-gradient(135deg, 
+    rgba(3, 125, 123, 0.35) 0%, 
+    white 100%) !important;
+}
+
+.pillar-card:nth-child(2):hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 79, 139, 0.35) 0%, 
+    white 100%) !important;
+}
+
+.pillar-card:nth-child(3):hover {
+  background: linear-gradient(135deg, 
+    rgba(3, 125, 123, 0.35) 0%, 
+    white 100%) !important;
 }
 
 .pillar-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem auto;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+.pillar-icon svg {
+  width: 100%;
+  height: 100%;
+  color: var(--primary-green);
+  filter: drop-shadow(0 2px 8px rgba(3, 125, 123, 0.2));
+  transition: all 0.3s ease;
+}
+
+.pillar-card:nth-child(2) .pillar-icon svg {
+  color: var(--secondary-pink);
+  filter: drop-shadow(0 2px 8px rgba(255, 79, 139, 0.2));
+}
+
+.pillar-card:hover .pillar-icon {
+  transform: scale(1.1) rotate(5deg);
+  animation-play-state: paused;
+}
+
+.pillar-card:hover .pillar-icon svg {
+  color: var(--secondary-pink);
+  filter: drop-shadow(0 4px 16px rgba(255, 79, 139, 0.4));
+}
+
+.pillar-card:nth-child(2):hover .pillar-icon svg {
+  color: var(--primary-green);
+  filter: drop-shadow(0 4px 16px rgba(3, 125, 123, 0.4));
+}
+
+.pillar-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(3, 125, 123, 0.1), transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.pillar-card:nth-child(2) .pillar-icon::after {
+  background: radial-gradient(circle, rgba(255, 79, 139, 0.1), transparent 70%);
+}
+
+.pillar-card:hover .pillar-icon::after {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 79, 139, 0.15), transparent 70%);
+}
+
+.pillar-card:nth-child(2):hover .pillar-icon::after {
+  background: radial-gradient(circle, rgba(3, 125, 123, 0.15), transparent 70%);
+}
+
+/* Effet de lueur autour des cartes - version subtile */
+.card-glow {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 22px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.pillar-card:nth-child(1) .card-glow {
+  background: linear-gradient(45deg, var(--primary-green), transparent, var(--primary-green));
+}
+
+.pillar-card:nth-child(2) .card-glow {
+  background: linear-gradient(45deg, var(--secondary-pink), transparent, var(--secondary-pink));
+}
+
+.pillar-card:nth-child(3) .card-glow {
+  background: linear-gradient(45deg, var(--primary-green), transparent, var(--primary-green));
+}
+
+.pillar-card:hover .card-glow {
+  opacity: 0.1;
 }
 
 .pillar-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--gray-dark);
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pillar-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.pillar-card:hover h3 {
+  color: var(--text-primary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.pillar-card:hover p {
+  color: var(--text-primary);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Services Section */
@@ -378,6 +699,26 @@
   .hero-image {
     display: none;
   }
+  
+  /* Réduire l'intensité des animations sur mobile */
+  .hero::before {
+    animation-duration: 12s;
+  }
+  
+  .hero::after {
+    animation-duration: 18s;
+  }
+  
+  .hero-particles::before,
+  .hero-particles::after {
+    animation-duration: 30s;
+    opacity: 0.7;
+  }
+  
+  .hero-data-lines {
+    opacity: 0.5;
+    animation-duration: 20s;
+  }
 
   .community-content {
     grid-template-columns: 1fr;
@@ -387,5 +728,22 @@
   .pillars,
   .testimonials-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Simplifier les animations sur mobile */
+  .pillar-card {
+    animation: none;
+  }
+  
+  .pillar-card:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+  
+  .card-glow {
+    display: none; /* Masquer la lueur sur mobile pour les performances */
+  }
+  
+  .pillar-icon {
+    animation-duration: 5s; /* Ralentir l'animation sur mobile */
   }
 }

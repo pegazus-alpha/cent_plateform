@@ -6,6 +6,10 @@ import './Home.css';
 export const Hero = () => {
   return (
     <section className="hero">
+      {/* Éléments d'animation de fond */}
+      <div className="hero-particles"></div>
+      <div className="hero-data-lines"></div>
+      
       <div className="hero-content">
         <div>
           <h1>Apprends, progresse et réussis avec 100% ACADEMY</h1>

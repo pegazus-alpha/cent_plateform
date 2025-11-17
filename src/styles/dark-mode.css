@@ -134,7 +134,7 @@ textarea::placeholder {
   color: white !important;
 }
 
-/* Hero section - garder les couleurs originales */
+/* Hero section - garder les couleurs originales et améliorer les animations */
 .hero {
   color: white !important;
 }
@@ -145,24 +145,106 @@ textarea::placeholder {
   color: white !important;
 }
 
+/* Améliorer les animations en mode sombre */
+[data-theme="dark"] .hero::before {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(240, 147, 251, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(79, 209, 197, 0.5) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+}
+
+[data-theme="dark"] .hero::after {
+  background: 
+    linear-gradient(45deg, transparent 40%, rgba(240, 147, 251, 0.15) 50%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(79, 209, 197, 0.15) 50%, transparent 60%);
+}
+
 /* Sections avec background spécial */
 .about {
   background: var(--bg-secondary) !important;
 }
 
-/* Cartes de la section "qui sommes nous" */
+/* Cartes de la section "qui sommes nous" - Fonds colorés subtils */
 .pillar-card {
-  background: var(--card-bg) !important;
-  color: var(--text-primary) !important;
-  box-shadow: 0 4px 16px var(--shadow-color) !important;
+  background: rgba(45, 55, 72, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-.pillar-card h3 {
-  color: var(--text-primary) !important;
+/* Fonds colorés pour le mode sombre - intensité augmentée */
+[data-theme="dark"] .pillar-card:nth-child(1) {
+  background: linear-gradient(135deg, 
+    rgba(79, 209, 197, 0.35) 0%, 
+    rgba(79, 209, 197, 0.18) 100%) !important;
+  border-left: 4px solid rgb(79, 209, 197) !important;
 }
 
-.pillar-card p {
+[data-theme="dark"] .pillar-card:nth-child(2) {
+  background: linear-gradient(135deg, 
+    rgba(240, 147, 251, 0.35) 0%, 
+    rgba(240, 147, 251, 0.18) 100%) !important;
+  border-left: 4px solid rgb(240, 147, 251) !important;
+}
+
+[data-theme="dark"] .pillar-card:nth-child(3) {
+  background: linear-gradient(135deg, 
+    rgba(79, 209, 197, 0.35) 0%, 
+    rgba(79, 209, 197, 0.18) 100%) !important;
+  border-left: 4px solid rgb(79, 209, 197) !important;
+}
+
+/* Hover avec intensification forte */
+[data-theme="dark"] .pillar-card:nth-child(1):hover {
+  background: linear-gradient(135deg, 
+    rgba(79, 209, 197, 0.5) 0%, 
+    rgba(79, 209, 197, 0.28) 100%) !important;
+}
+
+[data-theme="dark"] .pillar-card:nth-child(2):hover {
+  background: linear-gradient(135deg, 
+    rgba(240, 147, 251, 0.5) 0%, 
+    rgba(240, 147, 251, 0.28) 100%) !important;
+}
+
+[data-theme="dark"] .pillar-card:nth-child(3):hover {
+  background: linear-gradient(135deg, 
+    rgba(79, 209, 197, 0.5) 0%, 
+    rgba(79, 209, 197, 0.28) 100%) !important;
+}
+
+.pillar-card:hover {
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="dark"] .pillar-card h3 {
+  color: var(--text-primary) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+  font-weight: 700 !important;
+  /* Retirer l'effet gradient qui rend le texte difficile à lire */
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+}
+
+[data-theme="dark"] .pillar-card p {
   color: var(--text-secondary) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+  font-weight: 500 !important;
+}
+
+[data-theme="dark"] .pillar-card:hover h3 {
+  color: var(--text-primary) !important;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9) !important;
+}
+
+[data-theme="dark"] .pillar-card:hover p {
+  color: var(--text-primary) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7) !important;
 }
 
 .services {
@@ -273,6 +355,93 @@ input, textarea, select {
 
 input::placeholder, textarea::placeholder {
   color: var(--text-tertiary) !important;
+}
+
+/* Article Pages - Mode sombre */
+.article-header h1 {
+  color: var(--text-primary) !important;
+}
+
+.article-body {
+  color: var(--text-primary) !important;
+}
+
+.article-body h2 {
+  color: var(--primary-green) !important;
+}
+
+.article-body h3,
+.article-body h4 {
+  color: var(--text-primary) !important;
+}
+
+.article-body blockquote {
+  background: var(--bg-tertiary) !important;
+  color: var(--text-primary) !important;
+}
+
+.article-body code {
+  background: var(--bg-tertiary) !important;
+  color: var(--primary-green) !important;
+}
+
+.article-body table th {
+  background: var(--primary-green) !important;
+}
+
+.article-body table td {
+  border-color: var(--border-color) !important;
+}
+
+.article-body table tr:nth-child(even) {
+  background: var(--bg-tertiary) !important;
+}
+
+/* Share section */
+.share-section {
+  background: var(--bg-secondary) !important;
+}
+
+.share-section h3 {
+  color: var(--text-primary) !important;
+}
+
+/* Comments */
+.comments-section h2 {
+  color: var(--text-primary) !important;
+}
+
+.comment-form {
+  background: var(--card-bg) !important;
+}
+
+.comment-form h3 {
+  color: var(--text-primary) !important;
+}
+
+.comment {
+  background: var(--card-bg) !important;
+}
+
+.comment-header h4 {
+  color: var(--text-primary) !important;
+}
+
+.comment p {
+  color: var(--text-primary) !important;
+}
+
+/* Loading et Error states */
+.loading-container p {
+  color: var(--text-secondary) !important;
+}
+
+.error-container h2 {
+  color: var(--text-primary) !important;
+}
+
+.error-container p {
+  color: var(--text-secondary) !important;
 }
 
 /* Overlay */

@@ -356,6 +356,11 @@
   padding: 4rem 2rem;
 }
 
+.loading-container p {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+}
+
 .error-container {
   display: flex;
   flex-direction: column;
@@ -364,6 +369,38 @@
   min-height: 60vh;
   text-align: center;
   padding: 4rem 2rem;
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.error-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.error-container p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.btn-back-to-blog {
+  color: white;
+  background: var(--primary-green);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-back-to-blog:hover {
+  background: var(--primary-green-hover);
 }
 
 /* Responsive */
