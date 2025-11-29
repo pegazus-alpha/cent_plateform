@@ -5,7 +5,7 @@ import sharp from 'sharp';
 const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
 
 // Chemin vers votre PNG source
-const sourcePng = path.join('public', 'logo.png'); // Changez le nom si nécessaire
+const sourcePng = path.join('public', 'logo.png');
 
 // Créer le dossier icons s'il n'existe pas
 const iconsDir = path.join('public', 'icons');
@@ -18,7 +18,7 @@ async function generateIcons() {
   // Vérifier que le fichier source existe
   if (!fs.existsSync(sourcePng)) {
     console.error(`❌ Fichier source introuvable: ${sourcePng}`);
-    console.log('💡 Placez votre PNG dans le dossier public/ et ajustez le nom dans le script');
+    console.log('💡 Placez votre PNG dans public/logo.png');
     return;
   }
 
@@ -30,7 +30,7 @@ async function generateIcons() {
       await sharp(sourcePng)
         .resize(size, size, {
           fit: 'contain',
-          background: { r: 0, g: 0, b: 0, alpha: 0 } // Fond transparent
+          background: { r: 255, g: 255, b: 255, alpha: 1 } // Fond blanc
         })
         .png()
         .toFile(filepath);
