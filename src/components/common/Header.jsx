@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAppMode } from '../../hooks/useAppMode';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
 import './Header.css';
@@ -8,6 +9,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { isStandalone } = useAppMode();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +48,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={scrolled ? 'scrolled' : ''}>
+      <header className={`${scrolled ? 'scrolled' : ''} ${isStandalone ? 'standalone' : ''}`}>
         <nav>
           {/* Menu hamburger pour mobile */}
           <button 

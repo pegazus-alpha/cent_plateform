@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+/* Mode Standalone (App téléchargée) */
+:has(header.standalone) #root {
+  padding: 0;
+}
+
+:has(header.standalone) main {
+  padding-bottom: 80px;
+}
+
 /* Mobile: occuper tout l'espace sans marges */
 @media (max-width: 768px) {
   #root {

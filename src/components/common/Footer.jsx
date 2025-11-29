@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAppMode } from '../../hooks/useAppMode';
 import { SOCIAL_LINKS, CONTACT } from '../../utils/constants';
 import './Footer.css';
 
 const Footer = () => {
-  return (
+  const { isStandalone } = useAppMode();
+
+  // Masquer le footer en mode app téléchargée
+  if (isStandalone) {
+    return null;
+  }
     <footer>
       <div className="footer-grid container">
         <div className="footer-column">
