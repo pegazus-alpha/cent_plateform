@@ -23,6 +23,9 @@ const HomePage = () => {
   const { isStandalone } = useAppMode();
   const { language } = useLanguage();
 
+  // Debug log
+  console.log('[HomePage] Rendering with isStandalone:', isStandalone);
+
   const translations = {
     en: {
       title: 'Welcome',
