@@ -154,29 +154,6 @@ const HomePage = () => {
             ))}
           </section>
 
-          {/* Trending Articles */}
-          <section className="app-section">
-            <div className="section-header">
-              <h2>{t.trending}</h2>
-              <Link to="/blog" className="view-all">
-                {t.viewAll} <FiArrowRight size={16} />
-              </Link>
-            </div>
-            <div className="articles-list">
-              {trendingArticles.map((article) => (
-                <Link key={article.id} to={`/article/${article.id}`} className="article-item">
-                  <div className="article-image">{article.image}</div>
-                  <div className="article-content">
-                    <h3>{article.title}</h3>
-                    <p className="article-meta">{article.category} • {article.date}</p>
-                    <span className="article-reads">{article.reads} reads</span>
-                  </div>
-                  <FiArrowRight size={18} />
-                </Link>
-              ))}
-            </div>
-          </section>
-
           {/* Popular Courses */}
           <section className="app-section">
             <div className="section-header">
