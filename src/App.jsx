@@ -4,12 +4,14 @@ import { HelmetProvider } from 'react-helmet-async';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './hooks/useTheme.jsx';
 import Header from './components/common/Header';
+import BottomNavigation from './components/common/BottomNavigation';
 import Footer from './components/common/Footer';
 import OfflineBanner from './components/common/OfflineBanner';
 import PWAPrompt from './components/common/PWAPrompt';
 import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
 import ArticlePage from './pages/ArticlePage';
+import ContactPage from './pages/ContactPage';
 import './styles/variables.css';
 import './styles/animations.css';
 import './styles/dark-mode.css';
@@ -30,11 +32,13 @@ function App() {
                   <Route path="/" element={<HomePage />} />
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/article/:id" element={<ArticlePage />} />
+                  <Route path="/contact" element={<ContactPage />} />
                   {/* Add more routes as needed */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
               <Footer />
+              <BottomNavigation />
             </div>
           </Router>
         </LanguageProvider>
