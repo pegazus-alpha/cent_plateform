@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage';
 import BlogPage from './pages/BlogPage';
 import ArticlePage from './pages/ArticlePage';
 import ContactPage from './pages/ContactPage';
+import CommunityPage from './pages/CommunityPage';
 import './styles/variables.css';
 import './styles/animations.css';
 import './styles/dark-mode.css';
@@ -33,6 +34,7 @@ function App() {
                   <Route path="/blog" element={<BlogPage />} />
                   <Route path="/article/:id" element={<ArticlePage />} />
                   <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/communaute" element={<CommunityPage />} />
                   {/* Add more routes as needed */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
