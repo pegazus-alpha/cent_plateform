@@ -11,6 +11,8 @@ const Footer = () => {
   if (isStandalone) {
     return null;
   }
+
+  return (
     <footer>
       <div className="footer-grid container">
         <div className="footer-column">
